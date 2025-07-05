@@ -7,9 +7,7 @@
     <!-- daisyUi link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<!-- font-awesome link-->
-<script src="https://kit.fontawesome.com/d236943c38.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
 <!-- font link -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -26,6 +24,7 @@
   }
   .box-btn-bg{
     background-color: #3752FD;
+   
   }
 </style>
 </head>
@@ -43,20 +42,20 @@
       <!-- selecte btn -->
         <div class="flex justify-center items-center border-white rounded-3xl p-1 badge badge-sm">
           <img src="./assets/checkbox.png" alt="">
-          <span class=" font-bold text-xl">23</span>
+          <span id="nav-count" class=" font-bold text-xl">23</span>
         </div>
    <!-- theme btn -->
     <div class="dropdown dropdown-end">
-      <div class="btn btn-ghost btn-circle avatar">  
+      <button id="theme-btn" class="btn btn-ghost btn-circle avatar">  
         <div class="w-10 rounded-full">
           <img
             alt="Tailwind CSS Navbar component"
             src="./assets/theme-btn.png" />
         </div>
-      </div>
+      </button>
     </div>
-        </div>
 
+        </div>
       </div>
       </nav>
   </header>
@@ -72,13 +71,13 @@
           <img src="./assets/checkbox.png" alt="">
           <div>
             <span class="text-clr text-sm">Task Assigned </span>
-            <p class="text-3xl font-bold  text-left">05</p>
+            <p id="task-count" class="text-3xl font-bold  text-left">05</p>
           </div>
         </button>
       </div>
         <!-- 2nd card -->
-      <div>
-        <button class="btn rounded-lg w-[524px] h-24 gap-6 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] ">
+      <div id="discover-btn">
+        <button  class="btn rounded-lg w-[524px] h-24 gap-6 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] ">
           <img src="./assets/board.png" alt="">
           <div>
             <p class="text-white text-left">Discover Something <br> New Today!</p>
@@ -114,7 +113,7 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
@@ -133,7 +132,7 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
@@ -153,7 +152,7 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
@@ -173,7 +172,7 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
@@ -193,7 +192,7 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
@@ -213,15 +212,12 @@ and ensure onClick works properly</p>
       <p class="text-sm font-semibold">21 March 2025</p>
     </div>
     <div class="card-actions justify-end">
-      <button class="btn rounded-lg box-btn-bg text-white">Completed</button>
+      <button id="cmplt-btn" class="complt-btn btn rounded-lg box-btn-bg text-white disabled:opacity-60">Completed</button>
     </div>
 </div>
   </div>
          </div>
-         
-
        </div>
-
     </section>
     
   
@@ -232,12 +228,18 @@ and ensure onClick works properly</p>
     <img src="./assets/activity.png" alt="">
   <h3 class="text-xl text-center">Activity Log</h3>
   </div>
-  <button class="btn btn rounded-lg box-btn-bg text-white mt-7">Clear History</button>
+  <button id="clear-btn" class="btn btn rounded-lg box-btn-bg text-white mt-7">Clear History</button>
+</div>
+
+<div id="active-log" class="mt-4 max-h-48  text-left px-4"></div>
 </div>
   </section>
   </section> 
-  
-  <script src="./JS/date.js"></script>
 </main>
+<script src="./JS/date.js"></script>
+  <script src="./JS/utility.js"></script>
+  <script src="./JS/cmpltBtn.js"></script>
+  <script src="./JS/discover.js"></script>
+  <script src="./JS/theme.js"></script>
 </body>
 </html>
